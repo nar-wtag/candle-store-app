@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "ea7bc5b6d2e03db92bf4423808c2519a"
+name = "candle-store-app"
+handle = "candle-store-app"
+application_url = "https://globe-uk-expansion-opposition.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "nafis-candle-store.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://globe-uk-expansion-opposition.trycloudflare.com/auth/callback",
+  "https://globe-uk-expansion-opposition.trycloudflare.com/auth/shopify/callback",
+  "https://globe-uk-expansion-opposition.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
